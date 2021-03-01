@@ -9,11 +9,15 @@ import {
 } from 'react-native';
 import {ImageBackground} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Cardview from './Cardview';
+import Header from './Header';
+import Route from './Route';
 
 export class Main extends Component {
   render() {
     return (
       <View style={styles.maincontainer}>
+        <Header />
         <ScrollView>
           <View style={styles.maincontainer}>
             <ImageBackground
@@ -60,6 +64,7 @@ export class Main extends Component {
               </Text>
             </View>
           </View>
+          <Route />
         </ScrollView>
       </View>
     );
