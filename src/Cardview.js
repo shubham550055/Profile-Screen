@@ -1,5 +1,12 @@
-import React, {useState} from 'react';
-import {Text, View, StyleSheet, Modal, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Modal,
+  TouchableOpacity,
+  LogBox,
+} from 'react-native';
 import {Card} from 'react-native-paper';
 import ImageView from 'react-native-image-view';
 
@@ -17,6 +24,9 @@ const Cardview = () => {
   ];
   // state = {Image: 'https://picsum.photos/700'};
 
+  useEffect(() => {
+    LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
+  }, []);
   return (
     <View>
       <View style={styles.container}>
