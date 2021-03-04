@@ -9,9 +9,8 @@ import {
 } from 'react-native';
 import {ImageBackground} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Cardview from './Cardview';
-import Header from './Header';
-import Route from './Route';
+import Header from './Component/Header';
+import Route from './Component/Route';
 
 export class Main extends Component {
   render() {
@@ -22,7 +21,7 @@ export class Main extends Component {
           <View style={styles.maincontainer}>
             <ImageBackground
               source={require('./img/s.jpg')}
-              style={{height: 230}}
+              style={{height: 200}}
               resizeMode="cover"></ImageBackground>
             <Text style={styles.nametext}>Shubham Baviskar</Text>
             <View style={styles.followcontainer}>
@@ -30,19 +29,21 @@ export class Main extends Component {
                 <Text style={styles.follwtext}>Followers</Text>
                 <Text style={styles.follwnum}>411</Text>
               </View>
-              <View style={{width: '33%', height: 50}}>
-                {/* <TouchableOpacity onPress={{}}>
-                  <Text style={styles.follwtext}>Chat</Text>
-                  <Image
-                    style={{
-                      width: 35,
-                      height: 33,
-                      marginLeft: 44,
-                    }}
-                    source={require('./img/msg.png')}
-                  />
-                </TouchableOpacity> */}
+              <View style={{width: '34%', height: 50}}>
                 <TouchableOpacity onPress={{}}>
+                  <View style={styles.editprofilecontainer}>
+                    <Text
+                      style={{
+                        fontSize: 17,
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        color: '#2d4e97',
+                      }}>
+                      Edit Profile
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+                {/* <TouchableOpacity onPress={{}}>
                   <Text style={styles.follwtext}>Edit Profile</Text>
                   <Icon
                     name="account-edit"
@@ -50,19 +51,19 @@ export class Main extends Component {
                     color={'#e4632b'}
                     style={{marginLeft: 44}}
                   />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
               <View style={{width: '33%', height: 50}}>
                 <Text style={styles.follwtext}>Following</Text>
                 <Text style={styles.follwnum}>313</Text>
               </View>
             </View>
-            <View style={styles.locationcontainer}>
+            {/* <View style={styles.locationcontainer}>
               <Text style={styles.follwnum}>
                 <Icon name="map-marker-radius" size={24} />
                 City : Mumbai
               </Text>
-            </View>
+            </View> */}
           </View>
           <Route />
         </ScrollView>
@@ -78,10 +79,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   nametext: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: 'center',
     fontWeight: 'bold',
-    margin: 8,
+    margin: 5,
   },
   followcontainer: {
     flexDirection: 'row',
@@ -90,20 +91,23 @@ const styles = StyleSheet.create({
     margin: 8,
     paddingBottom: 20,
   },
-  locationcontainer: {
+  editprofilecontainer: {
     flexDirection: 'row',
-    backgroundColor: '#e7b29b',
+    backgroundColor: '#ffea28',
     alignItems: 'stretch',
     position: 'relative',
     justifyContent: 'center',
-    margin: 10,
+    margin: 8,
     borderRadius: 10,
-    padding: 8,
+    padding: 7,
+    // width: 120,
+    // marginLeft: 22,
   },
   follwtext: {
-    fontSize: 18,
+    fontSize: 17,
     textAlign: 'center',
-    margin: 7,
+    margin: 2,
+    color: '#878A8C',
   },
   follwnum: {
     fontSize: 20,

@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Cardview from './src/Cardview';
-import Main from './src/Main';
+import Cardview from './src/Component/Cardview';
+import Main from './src/Profilescreen';
 
 const Stack = createStackNavigator();
 export default class Navigation extends React.Component {
@@ -11,8 +11,8 @@ export default class Navigation extends React.Component {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Main"
-            component={Cardview}
+            name="Profilescreen"
+            component={Profilescreen}
             options={{headerShown: false}}
           />
           <Stack.Screen

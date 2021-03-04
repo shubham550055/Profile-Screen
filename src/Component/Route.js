@@ -37,7 +37,13 @@ const APP = () => {
               fontSize: 15,
               fontWeight: 'bold',
             },
-            style: {height: 55},
+            style: {
+              height: 55,
+              elevation: 0,
+            },
+            indicatorStyle: {
+              backgroundColor: '#e7612c',
+            },
             inactiveTintColor: 'gray',
           }}>
           <Tab.Screen name="Image" component={Cardview} />

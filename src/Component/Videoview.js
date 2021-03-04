@@ -6,23 +6,18 @@ import {
   Modal,
   TouchableOpacity,
   LogBox,
+  Dimensions,
+  Pressable,
 } from 'react-native';
 import {Card} from 'react-native-paper';
-import ImageView from 'react-native-image-view';
+import 'react-native-gesture-handler';
+import VideoPlayer from 'react-native-video-controls';
+import Video from 'react-native-video';
+import Videofullview from './Videofullview';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Cardview = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const images = [
-    {
-      source: {
-        uri: 'https://picsum.photos/seed/picsum/200/300',
-      },
-      // title: 'Paris',
-      width: 806,
-      height: 750,
-    },
-  ];
-  // state = {Image: 'https://picsum.photos/700'};
 
   useEffect(() => {
     LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
@@ -72,16 +67,17 @@ const Cardview = () => {
             />
           </Card>
         </View>
-        <Modal animationType="slide" transparent={true} visible={modalVisible}>
-          <View style={styles.centeredView}>
-            <View>
-              <ImageView
-                images={images}
-                imageIndex={0}
-                onClose={() => setModalVisible(!modalVisible)}
-                animationType="fade"
-              />
-            </View>
+        <Modal animationType="slide" visible={modalVisible}>
+          <View style={{flex: 1}}>
+            <Videofullview />
+            <Pressable
+              style={[styles.button]}
+              onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={styles.closebutton}>
+                {/* Closed Video */}
+                <Icon name="close-box" size={35} color={'white'} />
+              </Text>
+            </Pressable>
           </View>
         </Modal>
       </View>
@@ -108,39 +104,25 @@ const styles = StyleSheet.create({
     height: '100%',
     marginLeft: 2,
   },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
+  video: {
+    height: Dimensions.get('window').width * (9 / 16),
+    width: Dimensions.get('window').width,
+    backgroundColor: 'black',
+  },
+  fullscreenVideo: {
+    height: Dimensions.get('window').width,
+    width: Dimensions.get('window').height,
+    backgroundColor: 'black',
   },
   button: {
-    borderRadius: 20,
-    padding: 10,
+    padding: 15,
     elevation: 2,
+    marginBottom: 5,
+    backgroundColor: '#e4632b',
   },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
+  closebutton: {
     color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
+    fontSize: 18,
+    textAlign: 'right',
   },
 });
