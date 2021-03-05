@@ -33,23 +33,19 @@ const Cardview = () => {
         <View style={styles.followcontainer}>
           <Card style={styles.cardview}>
             <TouchableOpacity onPress={() => setModalVisible(true)}>
-              <Card.Cover
-                source={{uri: 'https://picsum.photos/seed/picsum/200/300'}}
-              />
+              <Card.Cover source={require('../img/p4.jpg')} />
             </TouchableOpacity>
           </Card>
           <Card Card style={styles.cardview}>
-            <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+            <Card.Cover source={require('../img/p2.jpg')} />
           </Card>
         </View>
         <View style={styles.followcontainer}>
           <Card style={styles.cardview}>
-            <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
+            <Card.Cover source={require('../img/p3.jpg')} />
           </Card>
           <Card Card style={styles.cardview}>
-            <Card.Cover
-              source={{uri: 'https://picsum.photos/seed/picsum/200/300'}}
-            />
+            <Card.Cover source={require('../img/p1.jpeg')} />
           </Card>
         </View>
         <View style={styles.followcontainer}>

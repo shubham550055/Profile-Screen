@@ -15,22 +15,22 @@ const APP = () => {
         <Tab.Navigator
           screenOptions={({route}) => ({
             tabBarIcon: ({focused, color, size}) => {
-              color = 'gray';
+              color = '#b2ada9';
               if (focused) {
-                color = '#e7612c';
+                color = '#CC202E';
               }
               if (route.name == 'Image')
-                return <Icon name="photo" size={22} color={color} />;
+                return <Icon name="photo" size={18} color={color} />;
               if (route.name == 'Video')
-                return <Icon name="video-camera" size={26} color={color} />;
+                return <Icon name="video-camera" size={20} color={color} />;
               if (route.name == 'Tag')
-                return <Icon name="tag" size={26} color={color} />;
+                return <Icon name="tag" size={20} color={color} />;
               if (route.name == 'Saved')
-                return <Icon name="save" size={26} color={color} />;
+                return <Icon name="save" size={20} color={color} />;
             },
           })}
           tabBarOptions={{
-            activeTintColor: '#e7612c',
+            activeTintColor: '#CC202E',
             showIcon: true,
             showLabel: false,
             labelStyle: {
@@ -38,11 +38,11 @@ const APP = () => {
               fontWeight: 'bold',
             },
             style: {
-              height: 55,
+              height: 45,
               elevation: 0,
             },
             indicatorStyle: {
-              backgroundColor: '#e7612c',
+              backgroundColor: '#CC202E',
             },
             inactiveTintColor: 'gray',
           }}>

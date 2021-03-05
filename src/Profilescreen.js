@@ -37,7 +37,7 @@ export class Main extends Component {
                         fontSize: 17,
                         textAlign: 'center',
                         fontWeight: 'bold',
-                        color: '#2d4e97',
+                        color: '#ffffff',
                       }}>
                       Edit Profile
                     </Text>
@@ -89,19 +89,18 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     position: 'relative',
     margin: 8,
-    paddingBottom: 20,
+    paddingBottom: 30,
   },
   editprofilecontainer: {
     flexDirection: 'row',
-    backgroundColor: '#ffea28',
+    backgroundColor: '#CC202E',
     alignItems: 'stretch',
     position: 'relative',
     justifyContent: 'center',
     margin: 8,
+    marginTop: 14,
     borderRadius: 10,
     padding: 7,
-    // width: 120,
-    // marginLeft: 22,
   },
   follwtext: {
     fontSize: 17,

@@ -10,6 +10,7 @@ import {
 import {ImageBackground} from 'react-native';
 import Header from './Component/Header';
 import Route from './Component/Route';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export class Main extends Component {
   render() {
@@ -25,21 +26,13 @@ export class Main extends Component {
             <View style={styles.Topcontainer}>
               <Text style={styles.nametext}>Shubham Baviskar</Text>
               <View style={styles.dmcontainer}>
-                <Text
-                  style={{
-                    fontSize: 17,
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    color: '#2d4e97',
-                  }}>
-                  D M
-                </Text>
+                <Icon name="wechat" size={35} color={'#CC202E'} />
               </View>
             </View>
             <View style={styles.followcontainer}>
               <View style={{width: '33%', height: 75}}>
                 <Text style={styles.follwtext}>Followers</Text>
-                <Text style={styles.follwnum}>411</Text>
+                <Text style={styles.follwnum}>41M</Text>
               </View>
               <View style={{width: '34%', height: 75, alignItems: 'center'}}>
                 <TouchableOpacity onPress={{}}>
@@ -56,9 +49,8 @@ export class Main extends Component {
                     <Text
                       style={{
                         fontSize: 18,
-                        // textAlign: 'center',
                         fontWeight: 'bold',
-                        color: '#2d4e97',
+                        color: '#ffffff',
                       }}>
                       Follow
                     </Text>
@@ -70,12 +62,12 @@ export class Main extends Component {
                 <Text style={styles.follwnum}>313</Text>
               </View>
             </View>
-            {/* <View style={styles.locationcontainer}>
-              <Text style={styles.follwnum}>
+            <View style={styles.locationcontainer}>
+              <Text style={styles.Locationtext}>
                 <Icon name="map-marker-radius" size={24} />
-                City : Mumbai
+                Location : Mumbai
               </Text>
-            </View> */}
+            </View>
           </View>
           <Route />
         </ScrollView>
@@ -92,17 +84,21 @@ const styles = StyleSheet.create({
   },
   nametext: {
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: 'right',
     fontWeight: 'bold',
-    width: '70%',
-    marginLeft: 30,
+    width: '72%',
+    marginRight: 50,
   },
   followcontainer: {
     flexDirection: 'row',
     alignItems: 'stretch',
     position: 'relative',
     margin: 8,
-    paddingBottom: 20,
+  },
+  Locationtext: {
+    textAlign: 'center',
+    padding: 10,
+    fontSize: 15,
   },
   Topcontainer: {
     flexDirection: 'row',
@@ -111,30 +107,24 @@ const styles = StyleSheet.create({
     margin: 8,
   },
   locationcontainer: {
-    backgroundColor: '#ffea28',
     alignItems: 'stretch',
     position: 'relative',
     justifyContent: 'center',
     margin: 8,
     borderRadius: 10,
-    padding: 7,
-    width: 120,
     marginLeft: 22,
   },
   dmcontainer: {
-    backgroundColor: '#ffea28',
     justifyContent: 'center',
-    margin: 1,
-    padding: 4,
-    width: '20%',
+    width: '28%',
   },
   followbutton: {
-    backgroundColor: '#ffea28',
+    backgroundColor: '#CC202E',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 100,
-    width: 88,
-    height: 88,
+    width: 85,
+    height: 85,
   },
   follwtext: {
     fontSize: 17,
